@@ -8,14 +8,14 @@ This repository contains redesigns of popular website interfaces. Each folder co
 2. **GoogleSearch**
 3. **Netflix**
 4. **Roblox_loginPage**
-5. **Steam**
+5. <a href="https://steamredesign.netlify.app/">**Steam** </a>
 
 ## Usage
 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/redesigns.git
+git clone https://github.com/R1SH4BH81/redesign.git
 ```
 
 2. Navigate to the folder of the website you want to view the redesign of.
