@@ -1,0 +1,30 @@
+# Web Redesign Repository
+
+This repository contains redesigns of popular website interfaces. Each folder corresponds to a different website, with an `index.html` file showcasing the redesigned interface.
+
+## Websites Redesigned
+
+1. **Amazon**
+2. **GoogleSearch**
+3. **Netflix**
+4. **Roblox_loginPage**
+5. **Steam**
+
+## Usage
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/your-username/redesigns.git
+```
+
+2. Navigate to the folder of the website you want to view the redesign of.
+3. Open the `index.html` file in your preferred web browser to see the redesigned interface.
+
+## Contributing
+
+Contributions are welcome! If you have a redesign for a popular website interface, feel free to fork this repository, make your changes, and submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the code as per the terms of the license.
