@@ -4,10 +4,10 @@ This repository contains redesigns of popular website interfaces. Each folder co
 
 ## Websites Redesigned
 
-1. **Amazon**
-2. **GoogleSearch**
-3. **Netflix**
-4. **Roblox_loginPage**
+1. <a href="https://amazonredesign.netlify.app/">**Amazon**</a>
+2. <a href="https://bright-frangollo-6f7ecf.netlify.app/">**GoogleSearch**</a>
+3. <a href="https://cerulean-peony-453e63.netlify.app/">**Netflix**</a>
+4. <a href="https://cerulean-peony-453e63.netlify.app/">**Roblox_loginPage**</a>
 5. <a href="https://steamredesign.netlify.app/">**Steam** </a>
 
 ## Usage
