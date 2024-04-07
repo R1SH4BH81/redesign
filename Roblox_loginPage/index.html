@@ -1,1 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login To Roblox</title>
+  <style>
+    :root {
+  --body-color: 48 48 58;
+  
+  --font-color: 255 255 255;
+  --highlight-color: 0 0 0;
+  
+  --theme-background: 20 20 20;
+  
+  --theme-light: 0 0 0;
+  --theme-medium: 0 0 0;
+  --theme-dark: 0 0 0;
+}
 
+body {
+  background-color: rgb(var(--body-color));
+  margin: 0px;
+}
+
+body::-webkit-scrollbar {
+  width: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: rgb(var(--theme-background));
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, input, select, button, span, a, p {
+  color: rgb(var(--font-color));
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0px;
+}
+
+button, a, input {  
+  outline: none;
+}
+
+.highlight {
+  color: rgb(var(--highlight-color));
+}
+
+.fancy-scrollbar::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
+.fancy-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.fancy-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  height: 0px;
+  width: 0px;
+}
+
+#phone {
+  background-color: rgb(var(--theme-background));
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+  height: 851px;
+  width: 393px;  
+  margin: 100px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+#main-wrapper {
+  height: 100%;
+  overflow: auto;
+}
+
+#main {
+  height: 100%;
+}
+
+#login-screen {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10;
+  margin: 1.75rem;
+  margin-bottom: 0rem;
+}
+
+#nav > :is(.nav-logo, .nav-search) {
+  height: 2.4rem;
+  width: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;  
+  outline: none;
+  cursor: pointer;
+}
+
+#nav > .nav-logo {
+  position: relative;
+  text-decoration: none;  
+}
+
+#nav > .nav-logo > i {
+  font-size: 1.5rem;
+  transform: rotate(10deg);
+}
+
+#nav > .nav-logo > i.inset {
+  position: absolute;
+  color: black;
+  scale: 0.35;
+}
+
+#nav > .nav-search {
+  background-color: transparent;
+  padding: 0rem;
+  border: none;
+}
+
+#nav > .nav-search:is(:hover, :focus) {
+  background-color: rgb(255 255 255 / 10%);
+  border-radius: 0.25rem;
+}
+
+#nav > .nav-search > i {
+  font-size: 1.25rem; 
+}
+
+#login-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  z-index: 4;
+  margin: 1.75rem;
+  margin-top: 3rem;
+}
+
+#login-form-wrapper > img {
+  width: 14rem;
+  align-self: center;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 0.5rem;
+  flex-basis: 100%;
+}
+
+#login-form > input {
+  background-color: transparent;
+  padding: 0.75rem;
+  background-color: rgb(var(--theme-background) / 40%);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 0.4rem;
+  outline: none;
+  transition: border-color 250ms ease;
+}
+
+#login-form > input:focus {
+  border-color: rgb(255 255 255 / 50%);
+}
+
+#login-form > button {
+  background-color: white;
+  border: none;
+  border-radius: 0.4rem;
+  color: black;
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+#login-form > .sign-up-button {
+  background-color: rgb(50 50 50);
+  border: none;
+  color: white;
+}
+
+#login-form > .sign-up-button:is(:hover, :focus) {
+  background-color: rgb(50 50 50);
+}
+
+#login-form > .alternate-options {
+  display: flex;
+  justify-content: center;  
+  gap: 1rem;
+}
+
+#login-form > .alternate-options > :is(a, span) {
+  font-size: 0.8rem;
+  color: rgb(255 255 255 / 70%);
+  text-decoration: none;
+}
+
+#login-form > .alternate-options > a:is(:hover, :focus) {
+  text-decoration: underline; 
+}
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+#footer-sections {
+  display: flex;
+  gap: 1rem;
+}
+
+#footer-sections > .footer-section {
+  flex-grow: 1;  
+}
+
+#footer-sections > .footer-section > .label {
+  font-size: 0.9rem;
+  font-weight: 700; 
+}
+
+#footer-sections > .footer-section > .footer-section-items {
+  display: flex; 
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+#footer-sections > .footer-section > .footer-section-items > a {
+  padding: 0.25rem 0rem;
+  color: rgb(255 255 255 / 0.7);
+  font-size: 0.8rem;
+  text-decoration: none; 
+}
+
+#footer-sections > .footer-section > .footer-section-items > a:is(:hover, :focus) {
+  text-decoration: underline; 
+}
+
+#copyright > p {  
+  color: rgb(255 255 255 / 0.7);
+  font-size: 0.65rem;
+}
+
+#copyright > p b { 
+  color: rgb(255 255 255 / 0.9);
+}
+
+#background-grid {
+  object-position: center;
+  object-fit: cover;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  opacity: 0.08;
+}
+
+#background-man {
+  height: 30rem;
+  position: absolute;
+  right: 0rem;
+  bottom: 0rem;
+  z-index: 3;
+  rotate: -15deg;
+  translate: 20% 25%;
+}
+
+#border {
+  width: calc(100% - 1.5rem);
+  height: calc(100% - 1.5rem);   
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  z-index: 2;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='4' stroke-dasharray='12%2c 28' stroke-dashoffset='6' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+
+@media(max-width: 500px) {
+  body {
+    overflow: auto;  
+  }
+  
+  #phone {
+    height: 100vh;
+    display: flex;
+    width: 100%;
+    margin: 0px auto;
+  }
+  
+  #main-wrapper {
+    width: 100%;
+    flex-grow: 1;
+  }
+}
+
+@media(max-height: 720px) {
+  #background-man {
+    height: 24rem; 
+  }
+}
+  </style>
+</head>
+<body>
+  <div id="phone">
+    <div id="main-wrapper" class="fancy-scrollbar">
+      <div id="main">
+        <div id="login-screen">
+          <div id="nav">
+            <a class="nav-logo" href="#">
+              <i class="fa-sharp fa-solid fa-square"></i>
+              <i class="inset fa-sharp fa-solid fa-square"></i>
+            </a>
+            <button class="nav-search" type="button">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+          <div id="login-form-wrapper">
+            <img src="https://assets.codepen.io/1468070/Roblox+Logo.svg" alt="" />
+            <div id="login-form">
+              <input class="dashed" type="text" placeholder="Username/Email/Phone" />
+              <input class="dashed" type="password" placeholder="Password" />
+              <button class="login-button" type="button">Log In</button>
+              <div class="alternate-options">
+                <a href="#" class="sign-up-button" type="button">Sign up</a>
+                <span class="dot">·</span>
+                <a href="#" class="another-device-button" type="button">Use another device</a>
+                <span class="dot">·</span>
+                <a href="#" class="need-help-button" type="button">Need help?</a>
+              </div>
+            </div>
+          </div>
+          <img id="background-grid" src="https://assets.codepen.io/1468070/Roblox+Background.jpg" />
+          <img id="background-man" src="https://assets.codepen.io/1468070/Lego+Man.webp" alt="" />
+          <div id="border"></div>
+        </div>
+        <div id="footer">
+          <div id="footer-sections">
+            <div class="footer-section">
+              <h3 class="label">About</h3>
+              <div class="footer-section-items">
+                <a href="#">About Us</a>
+                <a href="#">Blog</a>
+                <a href="#">Jobs</a>
+              </div>
+            </div>
+            <div class="footer-section">
+              <h3 class="label">Stuff</h3>
+              <div class="footer-section-items">
+                <a href="#">Accessibility</a>
+                <a href="#">Parents</a>
+                <a href="#">Gift Cards</a>
+              </div>
+            </div>
+            <div class="footer-section">
+              <h3 class="label">Legal</h3>
+              <div class="footer-section-items">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+              </div>
+            </div>
+          </div>
+          <div id="copyright">
+            <p><b>©2023 Roblox Corporation.</b> Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
